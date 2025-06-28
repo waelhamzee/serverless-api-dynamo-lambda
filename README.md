@@ -8,7 +8,7 @@ This project is a **serverless backend** built using the **AWS SAM (Serverless A
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 -   **Language:** TypeScript
 -   **Runtime:** Node.js 22.x (Lambda)
@@ -18,7 +18,7 @@ This project is a **serverless backend** built using the **AWS SAM (Serverless A
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -127,7 +127,7 @@ https://<your-api-id>.execute-api.<region>.amazonaws.com/<stage>/todos
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -144,14 +144,14 @@ https://<your-api-id>.execute-api.<region>.amazonaws.com/<stage>/todos
 
 ---
 
-## 🧪 Local vs. Production
+## Local vs. Production
 
 To make the app environment-aware, set the `endpoint` for DynamoDB conditionally in your code like:
 
 ```ts
 const client = new DynamoDBClient({
-    region: 'us-east-1',
     ...(process.env.IS_OFFLINE && {
+        region: 'local',
         endpoint: 'http://localhost:8000',
         credentials: {
             accessKeyId: 'fake',
@@ -166,12 +166,6 @@ And run with:
 ```bash
 IS_OFFLINE=true sam local start-api
 ```
-
----
-
-## 🔒 Authentication (Optional)
-
-You can secure your API using **Cognito User Pools** with `AWS::Serverless::Api` + `Authorizers`. This requires configuring an authorizer and attaching it to your API routes.
 
 ---
 
