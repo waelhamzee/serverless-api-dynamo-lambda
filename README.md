@@ -1,4 +1,4 @@
-# 🛠️ Serverless TODO API
+# Serverless TODO API
 
 This project is a **serverless backend** built using the **AWS SAM (Serverless Application Model)** framework. It utilizes:
 
@@ -169,7 +169,7 @@ IS_OFFLINE=true sam local start-api
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 Wael Hamze – Software Engineer
 
